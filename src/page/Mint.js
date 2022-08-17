@@ -136,10 +136,10 @@ const Mint = () => {
           <div className="text-xl text-center">Minted {ogMinted}/{pubSupply} Total </div>
           <div className="text-xl text-center">Price: <b>{ogSalePrice} ETH</b> / Maximum per Wallet: <b>1 NFT</b></div>
 
-          <div className="w-72 mx-auto flex justify-center"><WalletButton price={publicSalePrice} mintType={1} amount={1} isWhiteList={isWhiteList} /> </div>
+          <div className="w-72 mx-auto flex justify-center"><WalletButton price={ogSalePrice} mintType={1} amount={1} isWhiteList={isWhiteList} /> </div>
         </div>
 
-        <div className="text-white border rounded-xl w-1/2 mx-auto flex flex-col p-4 space-y-3 border-blue-460 bg-blue-800 bg-opacity-95">
+        {isWhiteList && <div className="text-white border rounded-xl w-1/2 mx-auto flex flex-col p-4 space-y-3 border-blue-460 bg-blue-800 bg-opacity-95">
           <div className="text-3xl text-center font-bold">Whitelists</div>
           <div className="text-xl text-darkred-100 text-center underline">Only for WL winners and WL collabs</div>
           <div className="text-xl text-center">Minted {wlMinted}/{pubSupply} Total </div>
@@ -173,7 +173,7 @@ const Mint = () => {
             </button>
           </div>
           <div className="w-72 mx-auto flex justify-center"><WalletButton price={wlSalePrice} mintType={2} amount={Number(amount2)} isWhiteList={isWhiteList} /> </div>
-        </div>
+        </div>}
 
         <div className="text-white border rounded-xl w-1/2 mx-auto flex flex-col p-4 space-y-3 border-black bg-mintPub-100 bg-opacity-95">
           <div className="text-3xl text-center font-bold">PUBLIC</div>
@@ -207,7 +207,7 @@ const Mint = () => {
               </div>
             </button>
           </div>
-          <div className="w-72 mx-auto flex justify-center"><WalletButton price={ogSalePrice} mintType={3} amount={Number(amount3)}  isWhiteList={isWhiteList}/> </div>
+          <div className="w-72 mx-auto flex justify-center"><WalletButton price={publicSalePrice} mintType={3} amount={Number(amount3)}  isWhiteList={isWhiteList}/> </div>
         </div>
       </div>
       <ToastContainer />
