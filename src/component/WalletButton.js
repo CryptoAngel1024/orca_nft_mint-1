@@ -45,7 +45,7 @@ const WalletButton = (props) => {
     const signer = provider.getSigner(account)
     const nftContract = new ethers.Contract(`${process.env.REACT_APP_NFT}`, mintABI, signer);
     try {
-      await nftContract.mintPublic(BigNumber.from(props.amount), "aaaa", { value: ethers.utils.parseEther(props.price.toString()) });
+      await nftContract.mintPublic(BigNumber.from(props.amount), { value: ethers.utils.parseEther(props.price.toString()) });
       toast.success("Successful!!!");
     } catch (err) {
       console.log("err", err["reason"])
@@ -151,7 +151,7 @@ const WalletButton = (props) => {
     <>
       {!active ? (
         <button className="rounded-full flex items-center py-2 px-20  bg-blue-450 hover:bg-blue-460  m-0.5" onClick={() => setModalShow(true)}>
-          <div>{isUnsupportedChain ? 'Connect to ETH Mainnet' : 'Connect'}</div>
+          <div>{isUnsupportedChain ? 'Connect to Rinkeby Testnet' : 'Connect'}</div>
         </button>
       ) : (
         <button className="rounded-full flex items-center py-2 px-12 bg-blue-450 hover:bg-blue-460 m-0.5 space-x-2" onClick={() => mint(props.mintType)}>
