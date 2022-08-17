@@ -6,7 +6,7 @@ const chainID = 4;
 export const MetaMaskconnector = new InjectedConnector({ supportedChainIds: [chainID] });
 
 export const walletconnect = new WalletConnectConnector({
-  rpc: { chainID: "https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161" },
+  rpc: { chainID: `https://rinkeby.infura.io/v3/${process.env.REACT_APP_INFURA_KEY}` },
   chainId: chainID,
   supportedChainIds: [chainID],
   bridge: "https://bridge.walletconnect.org",

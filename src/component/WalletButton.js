@@ -16,6 +16,7 @@ const WalletButton = (props) => {
 
 
   const isUnsupportedChain = error instanceof UnsupportedChainIdError
+  console.log("isUnsupportedChain")
   useEffect(() => {
     if (active) {
       localStorage.setItem('shouldEagerConnect', true)

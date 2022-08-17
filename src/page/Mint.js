@@ -22,7 +22,7 @@ const Mint = () => {
   const [amount2, setAmount2] = useState(1)
   const [amount3, setAmount3] = useState(1)
   const [isWhiteList, setIsWhiteList] = useState(false)
-  const web3 = new Web3("https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161")
+  const web3 = new Web3(`https://rinkeby.infura.io/v3/${process.env.REACT_APP_INFURA_KEY}`)
   const { active, account } = useWeb3React()
 
   const mintContract = new web3.eth.Contract(ABI_MINT, `${process.env.REACT_APP_NFT}`);
