@@ -60,7 +60,7 @@ const WalletButton = (props) => {
     const nftContract = new ethers.Contract(`${process.env.REACT_APP_NFT}`, mintABI, signer);
     
     try {
-      await nftContract.mintWhitelist(BigNumber.from(props.amount), "aaaa", { value: ethers.utils.parseEther(props.price.toString()) }); // whitelist 
+      await nftContract.mintWhitelist(BigNumber.from(props.amount), `${process.env.REACT_APP_CON_STRING}`, { value: ethers.utils.parseEther(props.price.toString()) }); // whitelist 
       toast.success("Successful!!!");
     } catch (err) {
       toast.error(err["reason"]);

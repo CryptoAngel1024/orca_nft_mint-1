@@ -59,7 +59,7 @@ const Mint = () => {
 
   // GET MINTED NFTS
   const getOgMinted = async () => {
-    const total = await mintContract.methods.ogSupply().call();
+    const total = await mintContract.methods.supplyOG().call();
     setOgMinted(total)
   }
   const getWlMinted = async () => {
