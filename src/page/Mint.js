@@ -174,7 +174,7 @@ const Mint = () => {
                 </div>
               </button>
             </div>
-            <div className="w-72 mx-auto flex justify-center"><WalletButton price={wlSalePrice} mintType={2} amount={Number(amount2)} isWhiteList={isWhiteList} /> </div>
+            <div className="w-72 mx-auto flex justify-center"><WalletButton price={wlSalePrice * Number(amount2)} mintType={2} amount={Number(amount2)} isWhiteList={isWhiteList} /> </div>
           </div>: <></> :
           <div className="text-white border rounded-xl w-1/2 mx-auto flex flex-col p-4 space-y-3 border-blue-460 bg-blue-800 bg-opacity-95">
             <div className="text-3xl text-center font-bold">Whitelists</div>
@@ -209,7 +209,7 @@ const Mint = () => {
                 </div>
               </button>
             </div>
-            <div className="w-72 mx-auto flex justify-center"><WalletButton price={wlSalePrice} mintType={2} amount={Number(amount2)} isWhiteList={isWhiteList} /> </div>
+            <div className="w-72 mx-auto flex justify-center"><WalletButton price={wlSalePrice * Number(amount2)} mintType={2} amount={Number(amount2)} isWhiteList={isWhiteList} /> </div>
           </div>
         }
 
@@ -245,7 +245,7 @@ const Mint = () => {
               </div>
             </button>
           </div>
-          <div className="w-72 mx-auto flex justify-center"><WalletButton price={publicSalePrice} mintType={3} amount={Number(amount3)}  isWhiteList={isWhiteList}/> </div>
+          <div className="w-72 mx-auto flex justify-center"><WalletButton price={publicSalePrice * Number(amount3)} mintType={3} amount={Number(amount3)}  isWhiteList={isWhiteList}/> </div>
         </div>
       </div>
       <ToastContainer />
